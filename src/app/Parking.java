@@ -12,6 +12,7 @@ public class Parking {
         Ticket[] ticket = new Ticket[1000];
 
         ticket[0] = dataReader.createTicket();
+        dataReader.close();
         ticket[0].printTicketInfo();
     }
 

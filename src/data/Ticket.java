@@ -13,12 +13,12 @@ public class Ticket {
     private final String emergencyPhoneNumber = "123456789";
 
     //Constructors
-    public Ticket(String ticketId, Double ticketPrice, Double amountOfPurchase, String currency, LocalDateTime dateOfPurchase, String expirationDate, String vehicleRegistrationNumber) {
+    public Ticket(String ticketId, Double ticketPrice, Double amountOfPurchase, String currency, String expirationDate, String vehicleRegistrationNumber) {
         this.setTicketId(ticketId);
         this.setTicketPrice(ticketPrice);
         this.setAmountOfPurchase(amountOfPurchase);
         this.setCurrency(currency);
-        this.setDateOfPurchase(dateOfPurchase);
+        this.setDateOfPurchase(LocalDateTime.now());
         this.setExpirationDate(expirationDate);
         this.setVehicleRegistrationNumber(vehicleRegistrationNumber);
     }
