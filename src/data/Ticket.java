@@ -1,21 +1,25 @@
 package data;
 
+import java.time.LocalDateTime;
+
 public class Ticket {
     private String ticketId;
     private Double ticketPrice;
+    private Double amountOfPurchase;
     private String currency;
-    private String dateOfPurchase;
+    private LocalDateTime dateOfPurchase;
     private String expirationDate;
     private String vehicleRegistrationNumber;
     private final String emergencyPhoneNumber = "123456789";
 
     //Constructors
-    public Ticket(String ticketId, Double ticketPrice, String currency, String dateOfPurchase, String expirationDate, String vehicleRegistrationNumber) {
+    public Ticket(String ticketId, Double ticketPrice, Double amountOfPurchase, String currency, LocalDateTime dateOfPurchase, String expirationDate, String vehicleRegistrationNumber) {
         this.setTicketId(ticketId);
         this.setTicketPrice(ticketPrice);
+        this.setAmountOfPurchase(amountOfPurchase);
         this.setCurrency(currency);
         this.setDateOfPurchase(dateOfPurchase);
-        this.setExpirationDate(expirationDate );
+        this.setExpirationDate(expirationDate);
         this.setVehicleRegistrationNumber(vehicleRegistrationNumber);
     }
 
@@ -29,11 +33,19 @@ public class Ticket {
     }
 
     public Double getTicketPrice() {
-        return ticketPrice;
+            return ticketPrice;
+        }
+
+        public void setTicketPrice(Double ticketPrice) {
+            this.ticketPrice = ticketPrice;
     }
 
-    public void setTicketPrice(Double ticketPrice) {
-        this.ticketPrice = ticketPrice;
+    public Double getAmountOfPurchase() {
+        return amountOfPurchase;
+    }
+
+    public void setAmountOfPurchase(Double amountOfPurchase) {
+        this.amountOfPurchase = amountOfPurchase;
     }
 
     public String getCurrency() {
@@ -44,11 +56,11 @@ public class Ticket {
         this.currency = currency;
     }
 
-    public String getDateOfPurchase() {
+    public LocalDateTime getDateOfPurchase() {
         return dateOfPurchase;
     }
 
-    public void setDateOfPurchase(String dateOfPurchase) {
+    public void setDateOfPurchase(LocalDateTime dateOfPurchase) {
         this.dateOfPurchase = dateOfPurchase;
     }
 
@@ -76,6 +88,7 @@ public class Ticket {
     public void printTicketInfo() {
         String ticketInformation = "Ticket ID: " + getTicketId() + "\n" +
                 "Ticket price: " + getTicketPrice() + getCurrency() + "\n" +
+                "Amount Of purchase: " + getAmountOfPurchase() + "\n" +
                 "Purchase date: " + getDateOfPurchase() + "\n" +
                 "Expiration date: " + getExpirationDate() + "\n" +
                 "Vehicle registration number: " + getVehicleRegistrationNumber() + "\n" +
